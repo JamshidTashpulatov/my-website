@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tailwind Menu-Kit</title>
+        <link href="/build/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </head>
+    
+    <body>
+        <!-- section -->
+        <section class="bg-gray-50">
+            <!-- container -->
+            <div class="container max-w-screen-xl mx-auto px-4 py-6">
+
+                <!-- navbar -->
+                <nav class="flex-wrap lg:flex items-center mb-24 lg:mb-32" x-data="{navbarOpen:false}">
+                    <div class="flex items-center justify-between mb-5 lg:mb-0">
+                        <!-- brand -->
+                        <h1 class="font-semibold text-gray-900 text-lg">Tailwind Menu Kit</h1>
+                        <!-- brand.// -->
+
+                        <button class="w-10 h-10 lg:hidden ml-auto flex items-center justify-center border border-gray-900 rounded-md" @click="navbarOpen = !navbarOpen">
+                            <img src="image/sayt/menu.svg" alt="icon">
+                        </button>
+                    </div>
+
+                    <!-- menu -->
+                    <ul class="lg:flex flex-col lg:flex-row lg:items-center text-center lg:space-x-8 lg:mx-auto lg:ml-10 mb-8 lg:mb-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                        <li class="font-medium text-gray-500 text-base hover:text-gray-300 transition duration-300 mb-2 lg:mb-0">
+                            <a href="#navbar-section">Examples</a>
+                        </li>
+
+                        <li class="font-medium text-gray-500 text-base hover:text-gray-300 transition duration-300 mb-5 lg:mb-0">
+                            <a href="mailto:jamshidbektashpulatov@gmail.com">Hire me</a>
+                        </li>
+
+                        <li class="block lg:hidden px-5 py-2.5 font-medium bg-blue-500 text-white text-base rounded-lg hover:bg-blue-600 transition duration-300">
+                            <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="text-center">Download</a>
+                        </li>
+                    </ul>
+                    <!-- menu.// -->
+
+                    <!-- btn -->
+                    <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="hidden lg:block px-5 py-2.5 font-medium bg-blue-500 text-white text-base rounded-lg hover:bg-blue-600 transition duration-300">Download</a>
+                    <!-- btn.// -->
+                </nav>
+                <!-- navbar.// -->
+
+                <!-- header -->
+                <header>
+                    <h1 class="font-semibold text-gray-900 text-2xl md:text-5xl lg:text-6xl text-center mb-3 md:mb-6">30+ Developer-friendly menu <br> examples</h1>
+
+                    <p class="font-normal text-gray-500 text-xs md:text-base lg:text-xl text-center mb-8 md:mb-12">Don’t spend your day creating a menu for your website, it will be ready in minutes <br> with ready-made examples.</p>
+
+                    <div class="text-center space-x-4 mb-16 md:mb-24">
+                        <a href="#navbar-section" class="px-6 py-3 md:px-7 md:py-4 font-medium bg-white border border-gray-300 text-gray-700 text-base md:text-lg rounded-lg hover:bg-gray-300 hover:text-gray-900 transition duration-300">Discover</a>
+                    </div>
+                </header>
+                <!-- header -->
+
+            </div>
+            <!-- container.// -->
+        </section>
+        <!-- section.// -->
+
+        <!-- section -->
+        <section id="navbar-section">          
+            <!-- container -->
+            <div class="container max-w-screen-xl mx-auto px-4 py-6">
+                <div class="flex items-center justify-center overflow-x-auto space-x-5 lg:space-x-10 mt-8 mb-16 md:mb-24">
+                    <a href="#" class="px-5 py-3.5 flex-shrink-0 font-medium text-gray-400 text-lg border border-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition ease-linear duration-300 mb-5 lg:mb-0">
+                        Navbar types
+                    </a>
+                    <a href="#align-types" class="px-5 py-3.5 flex-shrink-0 font-medium text-gray-400 text-lg border border-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition ease-linear duration-300 mb-5 lg:mb-0">
+                        Align types
+                    </a>
+                    <a href="#dropdown-types" class="px-5 py-3.5 flex-shrink-0 font-medium text-gray-400 text-lg border border-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition ease-linear duration-300 mb-5 lg:mb-0">
+                        Dropdown types
+                    </a>
+                    <a href="#megamenu-types" class="px-5 py-3.5 flex-shrink-0 font-medium text-gray-400 text-lg border border-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition ease-linear duration-300 mb-5 lg:mb-0">
+                        Megamenu types
+                    </a>
+                </div>
+
+                <div id="navbar-types" class="mb-10">
+                    <h3 class="font-semibold text-black text-lg md:text-2xl mb-3 md:mb-5">Navbar types</h3>
+
+                    <p class="font-medium text-gray-500 text-xs md:text-sm mb-6 md:mb-10">Sticky navbar, Fixed top or bottom navbar types.</p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+                        <!-- fixed navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/navbar-type/fixed-navbar.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Fixed Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+                            
+                                                <div class="flex itms-center justify-between">
+                            
+                                                    <!-- brand -->
+                                                    <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+                            
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+                            
+                                                </div>
+                            
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Components</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+                            
+                                                </ul>
+                                                <!-- menu.// -->
+                            
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- fixed navbar.// -->
+                        
+                        <!-- bottom navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/navbar-type/bottom-navbar.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Bottom Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+                                    
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                            
+                                            <p class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mt-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+
+                                                    <!-- brand -->
+                                                    <a href="#" class="sm:block lg:hidden font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+
+                                                </div>
+
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+
+                                                    <li class="relative font-medium text-gray-900 text-lg mb-5 lg:mb-0" x-data="{dropdownOpen:false}">
+
+                                                        <a href="#" class="flex items-center gap-2 hover:text-gray-500 transition ease-in-out duration-300" @click=" dropdownOpen = !dropdownOpen">
+                                                            Components
+                                                            <svg width="18" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M9 5L5 1L1 5" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+
+                                                        <!-- dropdown -->
+                                                        <ul class="hidden w-full shadow border lg:w-52 lg:absolute bottom-10 bg-blue-50 lg:bg-white p-4 rounded-md mt-5 lg:mt-0" :class="{'hidden':!dropdownOpen}">
+
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Alerts</a>
+                                                            </li>
+
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">According</a>
+                                                            </li>
+
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Buttons</a>
+                                                            </li>
+
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Button groups</a>
+                                                            </li>
+
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Badges</a>
+                                                            </li>
+                                                            
+                                                        </ul>
+                                                        <!-- dropdown.// -->
+
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-8 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#" class="block lg:hidden px-6 py-3 bg-blue-500 font-medium text-white text-lg text-center rounded-md ml-auto hover:bg-blue-700 transition ease-in-out duration-300">
+                                                            Get started
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                                <!-- menu.// -->
+
+                                                <a href="#" class="hidden lg:block px-6 py-3 bg-blue-500 font-medium text-white text-lg text-center rounded-md ml-auto hover:bg-blue-700 transition ease-in-out duration-300">
+                                                    Get started
+                                                </a>
+                                                
+                                            </nav>
+                                            <!-- navbar.// -->
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- bottom navbar.// -->
+                        
+                        <!-- sticky navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/navbar-type/sticky-navbar.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Sticky Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+                                    
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+
+                                                    <!-- brand -->
+                                                    <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+
+                                                </div>
+
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Components</a>
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+
+                                                </ul>
+                                                <!-- menu.// -->
+
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- sticky navbar.// -->
+                    </div>
+                </div>
+
+                <div id="align-types" class="mb-10">
+                    <h3 class="font-semibold text-black text-lg md:text-2xl mb-3 md:mb-5">Align types</h3>
+
+                    <p class="font-medium text-gray-500 text-xs md:text-sm mb-6 md:mb-10">Different navbar align types, left, center, right space between and so on ...</p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+                        <!-- right button navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/align-type/right-button.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Right Button Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+
+                                                    <!-- brand -->
+                                                    <a href="" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+
+                                                </div>
+
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Components</a>
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+
+                                                    <a href="#" class="px-6 py-3 bg-blue-500 font-medium text-white text-lg text-center rounded-md hover:bg-blue-700 transition ease-in-out duration-300">
+                                                        Get started
+                                                    </a>
+                                                    
+                                                </ul>
+                                                <!-- menu.// -->
+
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- right button navbar.// -->
+                        
+                        <!-- left navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/align-type/left.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Left Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+                            
+                                                    <!-- brand -->
+                                                    <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+                            
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+                            
+                                                </div>
+                            
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row lg:ml-10 lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+                                                    
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Components</a>
+                                                    </li>
+                            
+                            
+                                                    <li class="font-medium text-gray-900 text-lg">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+                            
+                                                </ul>
+                                                <!-- menu.// -->
+                            
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- left navbar.// -->
+
+                        <!-- center navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/align-type/center.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Center Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+                            
+                                                    <!-- brand -->
+                                                    <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+                            
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+                            
+                                                </div>
+                            
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row mx-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Components</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+                            
+                                                </ul>
+                                                <!-- menu.// -->
+                            
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- center navbar.// -->
+
+                        <!-- right navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/align-type/right.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Right Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+                            
+                                                    <!-- brand -->
+                                                    <a href="" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+                            
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+                            
+                                                </div>
+                            
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Components</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+                            
+                                                </ul>
+                                                <!-- menu.// -->
+                            
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- right navbar.// -->
+
+                        <!-- space-between navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/align-type/space-between.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Space Between Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+                                                    
+                                                    <!-- brand -->
+                                                    <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+                            
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+                            
+                                                </div>
+                            
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row mx-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Components</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-8 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+                            
+                                                    <a href="#" class="block lg:hidden px-6 py-3 bg-blue-500 font-medium text-white text-lg text-center rounded-md hover:bg-blue-700 transition ease-in-out duration-300">
+                                                        Get started
+                                                    </a>
+                            
+                                                </ul>
+                                                <!-- menu.// -->
+                            
+                                                <a href="#" class="hidden lg:block px-6 py-3 bg-blue-500 font-medium text-white text-lg text-center rounded-md hover:bg-blue-700 transition ease-in-out duration-300">
+                                                    Get started
+                                                </a>
+                            
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- space-between navbar.// -->
+
+                        <!-- button only navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/align-type/button-only.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Button Only Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex items-center justify-between py-6 mb-20">
+
+                                                <!-- brand -->
+                                                <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                <!-- brand.// -->
+                            
+                                                <!-- button -->
+                                                <div class="px-4 py-2 md:px-6 md:py-3 bg-blue-500 font-medium text-white text-md md:text-lg text-center rounded-md hover:bg-blue-700 transition ease-in-out duration-300">
+                                                    <a href="#">Get started</a>
+                                                </div>
+                                                <!-- button.// -->
+                            
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- button only navbar.// -->
+                    </div>
+                </div>
+
+                <div id="dropdown-types" class="mb-10">
+                    <h3 class="font-semibold text-black text-lg md:text-2xl mb-3 md:mb-5">Dropdown types</h3>
+
+                    <p class="font-medium text-gray-500 text-xs md:text-sm mb-6 md:mb-10">Dropdown on hover or click states and compactly designed navbars.</p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+                        <!-- simple dropdown navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/dropdown-type/simple.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Simple Dropdown Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+
+                                                    <!-- brand -->
+                                                    <a href="" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+
+                                                </div>
+
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+
+                                                    <li class="relative font-medium text-gray-900 text-lg mb-5 lg:mb-0" x-data="{dropdownOpen:false}">
+
+                                                        <a href="#" class="flex items-center gap-2 hover:text-gray-500 transition ease-in-out duration-300" @click="dropdownOpen = !dropdownOpen">
+                                                            Components
+                                                            <svg width="18" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 1L5 5L9 1" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+
+                                                        <!-- dropdown -->
+                                                        <ul class="hidden w-full shadow border lg:w-52 lg:absolute top-10 bg-blue-50 lg:bg-white p-4 rounded-md mt-5 lg:mt-0" :class="{'hidden':!dropdownOpen}">
+
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Alerts</a>
+                                                            </li>
+
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">According</a>
+                                                            </li>
+
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Buttons</a>
+                                                            </li>
+
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Button groups</a>
+                                                            </li>
+
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Badges</a>
+                                                            </li>
+
+                                                        </ul>
+                                                        <!-- dropdown.// -->
+
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+
+                                                    <a href="#" class="px-6 py-3 bg-blue-500 font-medium text-white text-lg text-center rounded-md hover:bg-blue-700 transition ease-in-out duration-300">
+                                                        Get started
+                                                    </a>
+
+                                                </ul>
+                                                <!-- menu.// -->
+
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- simple dropdown navbar.// -->
+
+                        <!-- description dropdown navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/dropdown-type/description.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Description Dropdown Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+                        
+                                                    <!-- brand -->
+                                                    <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+                        
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+                        
+                                                </div>
+                        
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                        
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+                        
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+                        
+                                                    <li class="relative font-medium text-gray-900 text-lg mb-5 lg:mb-0" x-data="{dropdownOpen:false}">
+                        
+                                                        <a href="#" class="flex items-center gap-2 hover:text-gray-500 transition ease-in-out duration-300" @click=" dropdownOpen = !dropdownOpen">
+                                                            Components
+                                                            <svg width="18" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 1L5 5L9 1" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                        
+                                                        <!-- dropdown -->
+                                                        <ul class="hidden w-full shadow border lg:w-72 lg:absolute top-10 bg-blue-50 lg:bg-white p-4 rounded-md mt-5 lg:mt-0" :class="{'hidden':!dropdownOpen}">
+                        
+                                                            <li class="p-2">
+                                                                <a href="#" class="font-medium text-black text-lg">Alerts</a>
+                                                                <p class="font-normal text-gray-400 text-sm">Provide contextual feedback messages</p>
+                                                            </li>
+                        
+                                                            <li class="p-2">
+                                                                <a href="#" class="font-medium text-black text-lg">According</a>
+                                                                <p class="font-normal text-gray-400 text-sm">Build vertically collapsing accordions</p>
+                                                            </li>
+                        
+                                                            <li class="p-2">
+                                                                <a href="#" class="font-medium text-black text-lg">Buttons</a>
+                                                                <p class="font-normal text-gray-400 text-sm">Examples for practical buttons</p>
+                                                            </li>
+                        
+                                                        </ul>
+                                                        <!-- dropdown.// -->
+                        
+                                                    </li>
+                        
+                                                    <li class="font-medium text-gray-900 text-lg">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+                        
+                                                </ul>
+                                                <!-- menu.// -->
+                        
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- description dropdown navbar.// -->
+
+                        <!-- icon description dropdown navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/dropdown-type/icon-description.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Icon Description Dropdown Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+                            
+                                                    <!-- brand -->
+                                                    <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+                            
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+                            
+                                                </div>
+                            
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                            
+                                                    <li class="font-medium text-gray-800 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-400 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+                            
+                                                    <li class="relative font-medium text-gray-800 text-lg mb-5 lg:mb-0" x-data="{dropdownOpen:false}">
+                            
+                                                        <a href="#" class="flex items-center gap-2 hover:text-gray-400 transition ease-in-out duration-300" @click=" dropdownOpen = !dropdownOpen">
+                                                            Components
+                                                            <svg width="18" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 1L5 5L9 1" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                            
+                                                        <!-- dropdown -->
+                                                        <ul class="hidden w-full shadow lg:w-96 lg:absolute top-10 bg-white border border-gray-200 lg:bg-white p-4 rounded-md mt-5 lg:mt-0" :class="{'hidden':!dropdownOpen}">
+                            
+                                                            <li class="p-2 flex gap-3">
+                                                                <div class="w-16 h-14 rounded-md bg-red-50 flex items-center justify-center">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FF5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                        <path d="M12 8V12" stroke="#FF5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                        <path d="M12 16H12.01" stroke="#FF5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                    </svg>
+                                                                </div>
+                            
+                                                                <div>
+                                                                    <a href="#" class="font-medium text-black text-lg">Alerts</a>
+                                                                    <p class="font-normal text-gray-400 text-sm">Provide contextual feedback messages</p>
+                                                                </div>
+                                                            </li>
+                            
+                                                            <li class="p-2 flex gap-3">
+                                                                <div class="w-16 h-14 rounded-md bg-green-50 flex items-center justify-center">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M21 10H3" stroke="#50B781" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                        <path d="M21 6H3" stroke="#50B781" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                        <path d="M21 14H3" stroke="#50B781" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                        <path d="M21 18H3" stroke="#50B781" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                    </svg>
+                                                                </div>
+                            
+                                                                <div>
+                                                                    <a href="#" class="font-medium text-black text-lg">According</a>
+                                                                    <p class="font-normal text-gray-400 text-sm">Build vertically collapsing accordions</p>
+                                                                </div>
+                                                            </li>
+                            
+                                                            <li class="p-2 flex gap-3">
+                                                                <div class="w-16 h-14 rounded-md bg-blue-50 flex items-center justify-center">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6B9EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                    </svg>
+                                                                </div>
+                            
+                                                                <div>
+                                                                    <a href="#" class="font-medium text-black text-lg">Buttons</a>
+                                                                    <p class="font-normal text-gray-400 text-sm">Examples for practical buttons</p>
+                                                                </div>
+                                                            </li>
+                            
+                                                        </ul>
+                                                        <!-- dropdown.// -->
+                            
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-800 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-400 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-800 text-lg">
+                                                        <a href="#" class="hover:text-gray-400 transition ease-in-out duration-300">License</a>
+                                                    </li>
+                            
+                                                </ul>
+                                                <!-- menu.// -->
+                            
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- icon description dropdown navbar.// -->
+
+                        <!-- multilavel dropdown navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/dropdown-type/multilavel.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Multilavel Dropdown Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+                            
+                                                    <!-- brand -->
+                                                    <a href="" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+                            
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+                            
+                                                </div>
+                            
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+                            
+                                                    <li class="relative font-medium text-gray-900 text-lg mb-5 lg:mb-0" x-data="{dropdownOpen:false}">
+                            
+                                                        <a href="#" class="flex items-center gap-2 hover:text-gray-500 transition ease-in-out duration-300" @click=" dropdownOpen = !dropdownOpen">
+                                                            Components
+                                                            <svg width="18" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 1L5 5L9 1" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                            
+                                                        <!-- dropdown -->
+                                                        <ul class="hidden w-full shadow border lg:w-52 lg:absolute top-10 right-0 bg-blue-50 lg:bg-white p-4 rounded-md mt-5 lg:mt-0" :class="{'hidden':!dropdownOpen}">
+                            
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Alerts</a>
+                                                            </li>
+                            
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">According</a>
+                                                            </li>
+                            
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Buttons</a>
+                                                            </li>
+                            
+                                                            <li class="p-2 font-medium text-gray-700 text-lg" x-data="{dropdownOpen:false}">
+                            
+                                                                <a href="#" class="flex items-center gap-2 hover:text-gray-400 tranition ease-in-out duration-300" @click=" dropdownOpen = !dropdownOpen">
+                                                                    Button groups
+                                                                    <svg width="18" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M1 1L5 5L9 1" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                    </svg>
+                                                                </a>
+                            
+                                                                <!-- dropdown -->
+                                                                <ul class="hidden w-full shadow border lg:w-52 lg:absolute top-36 left-56 bg-blue-100 lg:bg-white p-4 rounded-md mt-5 lg:mt-0" :class="{'hidden':!dropdownOpen}">
+                            
+                                                                    <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                        <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Dropdown item</a>
+                                                                    </li>
+                            
+                                                                    <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                        <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Dropdown item</a>
+                                                                    </li>
+                            
+                                                                    <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                        <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Dropdown item</a>
+                                                                    </li>
+                            
+                                                                    <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                        <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Dropdown item</a>
+                                                                    </li>
+                                                                    
+                                                                </ul>
+                                                                <!-- dropdown.// -->
+                            
+                                                            </li>
+                            
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Badges</a>
+                                                            </li>
+                            
+                                                        </ul>
+                                                        <!-- dropdown.// -->
+                            
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+                            
+                                                </ul>
+                                                <!-- menu.// -->
+                            
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- multilavel dropdown navbar.// -->
+
+                        <!-- hover simple navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/hover/hover.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Dropdown On Hover Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+                            
+                                                    <!-- brand -->
+                                                    <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+                            
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+                            
+                                                </div>
+                            
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+                            
+                                                    <li class="relative font-medium text-gray-900 text-lg mb-5 lg:mb-0" x-data="{ open: false }" @mouseleave="open = false">
+                            
+                                                        <a href="#" class="flex items-center gap-2 hover:text-gray-500 transition ease-in-out duration-300" @mouseover="open = true">
+                                                            Components
+                                                            <svg width="18" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 1L5 5L9 1" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                            
+                                                        <!-- dropdown -->
+                                                        <ul x-show="open"
+                                                            x-transition:enter.duration.500ms
+                                                            x-transition:leave.duration.500ms class="w-full lg:w-52 lg:absolute top-7 border shadow bg-blue-100 lg:bg-white p-4 rounded-md mt-5 lg:mt-0">
+                            
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Alerts</a>
+                                                            </li>
+                            
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">According</a>
+                                                            </li>
+                            
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Buttons</a>
+                                                            </li>
+                            
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Button groups</a>
+                                                            </li>
+                            
+                                                            <li class="p-2 font-medium text-gray-700 text-lg">
+                                                                <a href="#" class="hover:text-gray-400 tranition ease-in-out duration-300">Badges</a>
+                                                            </li>
+                            
+                                                        </ul>
+                                                        <!-- dropdown.// -->
+                            
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-8 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+                            
+                                                    <a href="#" class="px-6 py-3 bg-blue-500 font-medium text-white text-lg text-center rounded-md hover:bg-blue-700 transition ease-in-out duration-300">
+                                                        Get started
+                                                    </a>
+                            
+                                                </ul>
+                                                <!-- menu.// -->
+                            
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- hover simple navbar.// -->
+                    </div>
+                </div>
+
+                <div id="megamenu-types" class="mb-10">
+                    <h3 class="font-semibold text-black text-lg md:text-2xl mb-3 md:mb-5">Megamenu types</h3>
+
+                    <p class="font-medium text-gray-500 text-xs md:text-sm mb-6 md:mb-10">Elegant mega menu solutions for e-commerce and large website types.</p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+                        <!-- megamenu simple navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/megamenu/simple.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Simple Megamenu Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+                            
+                                                    <!-- brand -->
+                                                    <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+                            
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+                            
+                                                </div>
+                            
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+                            
+                                                    <li class="relative font-medium text-gray-900 text-lg mb-5 lg:mb-0" x-data="{dropdownOpen:false}">
+                            
+                                                        <a href="#" class="flex items-center gap-2 hover:text-gray-500 transition ease-in-out duration-300" @click=" dropdownOpen = !dropdownOpen">
+                                                            Components
+                                                            <svg width="18" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 1L5 5L9 1" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                            
+                                                        <!-- dropdown -->
+                                                        <ul class="w-full shadow border lg:w-auto flex flex-col lg:flex-row justify-between lg:space-x-16 lg:absolute top-10 lg:right-0 bg-blue-50 lg:bg-white p-10 rounded-md mt-5 lg:mt-0" :class="{'hidden':!dropdownOpen}">
+                            
+                                                            <li class="space-y-4 mb-10 lg:mb-0">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Alerts</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">According</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Buttons</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Button_groups</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Badges</a>
+                                                            </li>
+                            
+                                                            <span class="hidden lg:block w-0.5 h-48 bg-gray-200 mt-2"></span>
+                            
+                                                            <li class="space-y-4 mb-10 lg:mb-0">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Card</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Carousel</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Close_button</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Collapse</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Dropdowns</a>
+                                                            </li>
+                            
+                                                            <span class="hidden lg:block w-0.5 h-48 bg-gray-200 mt-2"></span>
+                            
+                                                            <li class="space-y-4 mb-10 lg:mb-0">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">List_group</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Modal</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Navs</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Tabs</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Navbar</a>
+                                                            </li>
+                            
+                                                            <span class="hidden lg:block w-0.5 h-48 bg-gray-200 mt-2"></span>
+                            
+                                                            <li class="space-y-4">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Offcanvas</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Pagination</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Placeholders</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Popovers</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Progress</a>
+                                                            </li>
+                            
+                                                        </ul>
+                                                        <!-- dropdown.// -->
+                                                        
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+                            
+                                                </ul>
+                                                <!-- menu.// -->
+                            
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- megamenu simple navbar.// -->
+
+                        <!-- megamenu fullwidth navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/megamenu/full-with.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Fullwidth Megamenu Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+                            
+                                                    <!-- brand -->
+                                                    <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+                            
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+                            
+                                                </div>
+                            
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+                            
+                                                    <li class="relative font-medium text-gray-900 text-lg mb-5 lg:mb-0" x-data="{dropdownOpen:false}">
+                            
+                                                        <a href="#" class="flex items-center gap-2 hover:text-gray-500 transition ease-in-out duration-300" @click=" dropdownOpen = !dropdownOpen">
+                                                            Components
+                                                            <svg width="18" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 1L5 5L9 1" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                            
+                                                        <!-- dropdown -->
+                                                        <ul class="w-full shadow border lg:w-auto flex flex-col lg:flex-row justify-between lg:space-x-14 lg:absolute top-10 lg:-right-32 bg-blue-50 lg:bg-white p-10 rounded-md mt-5 lg:mt-0" :class="{'hidden':!dropdownOpen}">
+                            
+                                                            <li class="space-y-4 mb-10 lg:mb-0">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                            </li>
+                            
+                                                            <span class="hidden lg:block w-0.5 h-48 bg-gray-200 mt-2"></span>
+                            
+                                                            <li class="space-y-4 mb-10 lg:mb-0">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                            </li>
+                            
+                                                            <span class="hidden lg:block w-0.5 h-48 bg-gray-200 mt-2"></span>
+                            
+                                                            <li class="space-y-4 mb-10 lg:mb-0">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                            </li>
+                            
+                                                            <span class="hidden lg:block w-0.5 h-48 bg-gray-200 mt-2"></span>
+                            
+                                                            <li class="space-y-4 mb-10 lg:mb-0">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                            </li>
+                            
+                                                            <span class="hidden lg:block w-0.5 h-48 bg-gray-200 mt-2"></span>
+                            
+                                                            <li class="space-y-4 mb-10 lg:mb-0">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                            </li>
+                            
+                                                            <span class="hidden lg:block w-0.5 h-48 bg-gray-200 mt-2"></span>
+                            
+                                                            <li class="space-y-4 mb-10 lg:mb-0">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                            </li>
+                            
+                                                            <span class="hidden lg:block w-0.5 h-48 bg-gray-200 mt-2"></span>
+                            
+                                                            <li class="space-y-4 mb-10 lg:mb-0">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                            </li>
+                            
+                                                        </ul>
+                                                        <!-- dropdown.// -->
+                            
+                                                    </li>
+                            
+                                                    <li class="font-medium text-gray-900 text-lg">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+                            
+                                                </ul>
+                                                <!-- menu.// -->
+                            
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- megamenu fullwidth navbar.// -->
+
+                        <!-- megamenu articles navbar -->
+                        <div x-data="{ showModal : false }" class="cursor-pointer space-y-2">
+                            <div @click="showModal = !showModal">
+                                <img src="image/megamenu/articles.svg" alt="image">
+
+                                <p class="font-medium text-black text-sm">Articles Megamenu Navbar</p>
+                            </div>
+
+                            <!-- Modal Background -->
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                                <!-- Modal -->
+                                <div x-show="showModal" class="bg-white rounded" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+
+                                    <div class="px-6 py-10">
+                                        <!-- container  -->
+                                        <div class="container max-w-screen-xl mx-auto px-4">
+
+                                            <svg class="ml-auto fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" @click="showModal = !showModal">
+                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                            </svg>
+                                            
+                                            <!-- navbar  -->
+                                            <nav class="flex-wrap lg:flex items-center py-6 mb-20" x-data="{navbarOpen:false}">
+
+                                                <div class="flex itms-center justify-between">
+
+                                                    <!-- brand -->
+                                                    <a href="#" class="font-semibold text-xl text-gray-900">Menu Kit</a>
+                                                    <!-- brand.// -->
+
+                                                    <!-- toggler btn -->
+                                                    <button class="lg:hidden w-16 h-10 bg-blue-400 flex items-center justify-center rounded-md ml-auto outline-none" @click="navbarOpen = !navbarOpen">
+                                                        <svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="40" height="2" rx="1" fill="#ffffff"/>
+                                                            <rect y="12" width="40" height="2" rx="1" fill="#ffffff"/>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- toggler btn.// -->
+
+                                                </div>
+
+                                                <!-- menu -->
+                                                <ul class="lg:flex lg:items-center flex-col lg:flex-row ml-auto lg:space-x-10 mt-10 lg:mt-0" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Guide</a>
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg mb-5 lg:mb-0">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">Documents</a>
+                                                    </li>
+
+                                                    <li class="relative font-medium text-gray-900 text-lg mb-5 lg:mb-0" x-data="{dropdownOpen:false}">
+
+                                                        <a href="#" class="flex items-center gap-2 hover:text-gray-500 transition ease-in-out duration-300" @click=" dropdownOpen = !dropdownOpen">
+                                                            Components
+                                                            <svg width="18" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 1L5 5L9 1" stroke="#242424" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+
+                                                        <!-- dropdown -->
+                                                        <ul class="w-full shadow border lg:w-auto flex flex-col lg:flex-row justify-between lg:space-x-16 lg:absolute top-10 lg:-right-16 bg-blue-50 lg:bg-white p-10 rounded-md mt-5 lg:mt-0" :class="{'hidden':!dropdownOpen}">
+
+                                                            <li class="space-y-4 mb-10 lg:mb-0">
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                                <a href="#" class="block font-normal text-gray-700 text-md">Link_item</a>
+                                                            </li>
+
+                                                            <span class="hidden lg:block w-0.5 h-48 bg-gray-200 mt-2"></span>
+
+                                                            <div class=" mb-10 lg:mb-0">
+                                                                <div class="w-60 h-36 bg-blue-200 mb-5">
+
+                                                                </div>
+
+                                                                <a href="#" class="font-semibold text-xl text-gray-900 mb-3">Featured title</a>
+
+                                                                <p class="font-normal text-md text-gray-400">Category</p>
+                                                            </div>
+
+                                                            <div class=" mb-10 lg:mb-0">
+                                                                <div class="w-60 h-36 bg-blue-200 mb-5">
+
+                                                                </div>
+
+                                                                <a href="#" class="font-semibold text-xl text-gray-900 mb-3">Featured title</a>
+
+                                                                <p class="font-normal text-md text-gray-400">Category</p>
+                                                            </div>
+
+                                                            <div class=" mb-10 lg:mb-0">
+                                                                <div class="w-60 h-36 bg-blue-200 mb-5">
+
+                                                                </div>
+
+                                                                <a href="#" class="font-semibold text-xl text-gray-900 mb-3">Featured title</a>
+
+                                                                <p class="font-normal text-md text-gray-400">Category</p>
+                                                            </div>
+
+                                                        </ul>
+                                                        <!-- dropdown.// -->
+
+                                                    </li>
+
+                                                    <li class="font-medium text-gray-900 text-lg">
+                                                        <a href="#" class="hover:text-gray-500 transition ease-in-out duration-300">License</a>
+                                                    </li>
+
+                                                </ul>
+                                                <!-- menu.// -->
+
+                                            </nav>
+                                            <!-- navbar.// -->
+                            
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam, quae, nihil architecto corporis similique alias laboriosam sapiente exercitationem sit fugiat at doloremque delectus. Deserunt officiis asperiores, omnis a quia facilis, quas cum amet dicta corporis iusto temporibus in magni.</p>
+                            
+                                            <br>
+                            
+                                            <div class="hidden md:block">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                
+                                                <br>
+                                
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quas placeat eos ratione quasi, aliquid quidem rem repellendus deleniti non vel totam porro eveniet animi optio explicabo corporis assumenda cumque. Minima, architecto quibusdam. Ducimus minus eum nemo quaerat. Iusto, illo, molestias iure est esse laboriosam eos, soluta vitae mollitia sequi distinctio doloribus corrupti fuga suscipit consequatur. Repellat magnam doloribus id.</p>
+                                            </div>
+
+                                            <!-- footer -->
+                                            <div class="flex justify-end mt-16">
+                                                <a href="https://elegantgoodies.gumroad.com/l/menu-kit" class="px-4 py-3 bg-green-500 rounded-lg text-white hover:bg-green-600 mr-2">Download</a>
+                                                <button class="px-4 py-3 bg-blue-500 rounded-lg text-white hover:bg-blue-600" @click="showModal = !showModal">Close</button>
+                                            </div>
+                                            <!-- footer.// -->
+                            
+                                        </div> 
+                                        <!-- container.// -->          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- megamenu articles navbar.// -->
+                    </div>
+                </div>
+
+            </div>
+            <!-- container.// -->
+        </section>
+        <!-- section.// -->
+
+        <!-- section -->
+        <section class="mb-24">          
+            <!-- container -->
+            <div class="container max-w-screen-xl mx-auto px-4 py-6 bg-gray-50">
+                <div class="text-center">
+                    <img src="image/sayt/avatar.svg" alt="image" class="mx-auto mb-8">
+
+                    <h2  class="font-medium text-gray-900 text-xl mb-2">Still have questions?</h2>
+
+                    <p class="font-normal text-gray-500 text-lg mb-8">Do you have a suggestion or question for a navbar type?</p>
+
+                    <a href="mailto:jamshidbektashpulatov@gmail.com" class="px-4 py-2.5 bg-blue-500 font-medium text-white text-base rounded-lg mb-8 hover:bg-blue-600 transition duration-300">
+                        Let’s send me message
+                    </a>
+                </div>
+            </div>
+            <!-- container.// -->
+        </section>
+        <!-- section.// -->
+
+        <!-- section -->
+        <section class="mb-24">          
+            <!-- container -->
+            <div class="container max-w-screen-xl mx-auto px-4 py-6 bg-gray-50">
+                <div class="flex flex-col xl:flex-row xl:justify-between">
+                    <div class="mt-8 md:mt-16 ml-8 md:ml-16">
+                        <h2 class="font-semibold text-black text-xl lg:text-3xl mb-4">Looking for an experienced guy?</h2>
+
+                        <p class="font-normal text-gray-400 text-xs lg:text-xl mb-8 lg:mb-16">I will help you develop your front end projects and create elegant designs.</p>
+                    </div>
+
+                    <div class="space-x-2 xl:mt-20 ml-8 md:ml-16 lg:mr-16">
+                        <a href="https://dribbble.com/elegants" class="px-5 py-3 bg-white font-medium text-gray-700 text-base border rounded-lg hover:bg-gray-300 hover:text-gray-900 transition duration-300">
+                            Dribbble
+                        </a>
+                        <a href="mailto:jamshidbektashpulatov@gmail.com" class="px-4 py-2 lg:px-5 lg:py-3 font-medium bg-blue-500 text-white text-base rounded-lg hover:bg-blue-600 transition duration-300">
+                            Hire me
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- container.// -->
+        </section>
+        <!-- section.// -->
+    </body>
+</html>
