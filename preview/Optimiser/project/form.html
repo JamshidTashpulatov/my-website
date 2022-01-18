@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Optimiser-Tailwindcss</title>
+        <link href="/css/main.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    </head>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* menu */
+        .active {
+            display: block;
+        }
+
+        /* dropdown */
+        .dropdown-menu {
+            display: none;
+        }
+
+        .dropdown:hover > .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+
+    <body>
+        <section>
+            <!-- container -->
+            <div class="container max-w-screen-xl mx-auto px-4">
+                <!-- navbar -->
+                <nav class="flex-wrap lg:flex items-center py-6">
+
+                    <div class="flex itms-center justify-between">
+                        <!-- brand -->
+                        <div class="flex items-center space-x-1">
+                            <svg width="34" height="27" viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2191 1.38461H25.5546L15.0152 17.2889H0.679688L11.2191 1.38461Z" fill="#007AFF"/>
+                                <path d="M11.8468 18.7629L7.76465 24.9231H22.7801L33.3196 9.01877H22.2372L15.7799 18.7629H11.8468Z" fill="#312ECB"/>
+                            </svg>
+                            <h1 class="font-semibold text-black text-lg uppercase">Optimiser</h1>
+                        </div>
+                        <!-- brand.// -->
+
+                        <!-- toggler btn -->
+                        <button id="toggleButton" class="block lg:hidden py-2 px-3 border border-blue-100 flex items-center justify-center rounded-md ml-auto outline-none hover:bg-blue-100 transition duration-300">
+                            <i class="fas fa-bars text-2xl text-blue-600"></i>
+                        </button>
+                        <!-- toggler btn.// -->
+                    </div>
+
+                    <!-- menu -->
+                    <ul id="navi-list" class="hidden lg:flex lg:items-center flex-col lg:flex-row gap-x-8 ml-0 lg:ml-12 mt-5 lg:mt-0">
+                        <li class="mb-5 lg:mb-0">
+                            <a href="#" class="font-medium text-gray-500 text-base hover:text-gray-800 transition duration-300">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="relative dropdown mb-5 lg:mb-0">
+                            <a href="#" class="dropdown-link flex items-center gap-2 font-medium text-gray-500 text-base hover:text-gray-800 transition duration-300">
+                                Services
+                                <!-- <i class="dropdown-icon fas fa-chevron-down mt-1 text-gray-500 text-sm transition duration-500"></i> -->
+                            </a>
+
+                            <!-- dropdown -->
+                            <!-- <ul class="dropdown-menu w-full shadow border lg:w-40 lg:absolute top-6 right-0 bg-white p-4 rounded-md">
+                                <li class="dropdown-item">
+                                    <a href="#" class="font-semibold text-gray-500 text-lg">
+                                        Item
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#" class="font-semibold text-gray-500 text-lg">
+                                        Item
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#" class="font-semibold text-gray-500 text-lg">
+                                        Item
+                                    </a>
+                                </li>
+                            </ul> -->
+                        </li>
+
+                        <li class="relative dropdown mb-5 lg:mb-0">
+                            <a href="#" class="dropdown-link flex items-center gap-2 font-medium text-gray-500 text-base hover:text-gray-800 transition duration-300">
+                                Pages
+                                <i class="dropdown-icon fas fa-chevron-down mt-1 text-gray-500 text-sm transition duration-500"></i>
+                            </a>
+
+                            <!-- dropdown -->
+                            <ul class="dropdown-menu w-full space-y-3 shadow border lg:w-40 lg:absolute top-6 right-0 bg-white p-3 rounded-md">
+                                <li class="dropdown-item">
+                                    <a href="index.html" class="font-semibold text-gray-500 text-lg px-2 py-1 hover:bg-gray-200 rounded-lg transition duration-300">
+                                        Home
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="pricing.html" class="font-semibold text-gray-500 text-lg px-2 py-1 hover:bg-gray-200 rounded-lg transition duration-300">
+                                        Pricing
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="about.html" class="font-semibold text-gray-500 text-lg px-2 py-1 hover:bg-gray-200 rounded-lg transition duration-300">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="team.html" class="font-semibold text-gray-500 text-lg px-2 py-1 hover:bg-gray-200 rounded-lg transition duration-300">
+                                        Team
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#" class="font-semibold text-gray-500 text-lg px-2 py-1 hover:bg-gray-200 rounded-lg transition duration-300">
+                                        Form
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="mb-5 lg:mb-0">
+                            <a href="#" class="font-medium text-gray-500 text-base hover:text-gray-800 transition duration-300">
+                                Pricing
+                            </a>
+                        </li>
+
+                        <!-- btn -->
+                        <a href="#" class="block lg:hidden px-5 py-2.5 font-medium bg-blue-500 text-white text-base text-center rounded-lg hover:bg-blue-600 transition duration-300">
+                            Get a quote
+                        </a>
+                        <!-- btn.// -->
+                    </ul>
+                    <!-- menu.// -->
+
+                    <!-- btn -->
+                    <a href="#" class="hidden lg:block px-5 py-2.5 font-medium bg-blue-500 text-white text-base rounded-lg transform hover:scale-110 hover:bg-blue-600 transition duration-300 ml-auto">
+                        Get a quote
+                    </a>
+                    <!-- btn.// -->
+                </nav>
+                <!-- navbar.// -->
+
+                <hr class="bg-gray-200 h-0.5">
+            </div>
+            <!-- container.// -->
+        </section>
+
+        <section>
+            <!-- container -->
+            <div class="container max-w-screen-xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 py-12 lg:py-24">
+                    <form class="md:px-16 lg:py-10 bg-white">
+                        <h1 class="font-semibold text-gray-900 text-4xl mb-5">Get in touch</h1>
+
+                        <p class="font-normal text-gray-500 text-xl mb-12">Our friendly team would love to hear from you.</p>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 mb-6">
+                            <div class="mb-6 lg:mb-0">
+                                <label class="block font-medium text-gray-700 text-sm mb-1.5">First name</label>
+                                <input type="text" placeholder="First name" class="px-4 py-3 w-full lg:w-60 border border-gray-300 shadow-sm rounded-lg outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block font-medium text-gray-700 text-sm mb-1.5">Last name</label>
+                                <input type="text" placeholder="Last name" class="px-4 py-3 w-full lg:w-60 border border-gray-300 shadow-sm rounded-lg outline-none">
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block font-medium text-gray-700 text-sm mb-1.5">Email</label>
+                            <input type="text" placeholder="you@company.com" class="px-4 py-3 w-full border border-gray-300 shadow-sm rounded-lg outline-none">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block font-medium text-gray-700 text-sm mb-1.5">Phone number</label>
+                            <input type="text" placeholder="+1 (555) 000-0000" class="px-4 py-3 w-full border border-gray-300 shadow-sm rounded-lg outline-none">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block font-medium text-gray-700 text-sm mb-1.5">Message</label>
+                            <textarea rows="5" class="px-4 py-3 w-full border border-gray-300 shadow-sm rounded-lg outline-none"></textarea>
+                        </div>
+
+                        <div class="flex items-center gap-3 mb-6">
+                            <input type="checkbox" class="w-5 h-5 cursor-pointer">
+                            <p class="font-normal text-gray-500 text-base">You agree to our friendly privacy policy.</p>
+                        </div>
+
+                        <a href="#" class="py-3 block font-medium bg-blue-500 text-white text-center text-base rounded-lg hover:bg-blue-600 transition duration-300">
+                            Send message
+                        </a>
+                    </form>
+
+                    <img src="/images/Image11.svg" alt="image" class="hidden lg:block hover:opacity-90 transition duration-300">
+                </div>
+            </div>
+            <!-- container.// -->
+        </section>
+
+        <section class="bg-gray-50">
+            <!-- container -->
+            <div class="container max-w-screen-xl mx-auto px-4">
+                <div class="text-center py-12 lg:py-24">
+                    <h2 class="font-semibold text-gray-900 text-2xl md:text-3xl lg:text-4xl mb-5">We are here to get started</h2>
+
+                    <p class="font-normal text-gray-500 text-base lg:text-xl mb-10">Contact us to speed up the development of your personal project or startup.</p>
+
+                    <div class="flex items-center justify-center space-x-3">
+                        <a href="#" class="px-5 py-3 font-medium text-gray-700 text-base border shadow-sm rounded-lg hover:bg-gray-200 transform hover:scale-110 hover:-rotate-6 transition duration-300">
+                            Learn more
+                        </a>
+
+                        <a href="#" class="px-5 py-3 font-medium bg-blue-500 text-white text-base shadow-sm rounded-lg hover:bg-blue-600 transform hover:scale-110 hover:-rotate-6 transition duration-300">
+                            Get started
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- container.// -->
+        </section>
+
+        <footer class="bg-gray-800">
+            <!-- container -->
+            <div class="container max-w-screen-xl mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center justify-between py-12">
+                    <div class="flex items-center gap-x-1 mb-4 lg:mb-0">
+                        <svg width="34" height="28" viewBox="0 0 34 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.2191 1.94727H25.5546L15.0152 17.8516H0.679688L11.2191 1.94727Z" fill="#007AFF"/>
+                            <path d="M11.8468 19.3252L7.76465 25.4854H22.7801L33.3196 9.58105H22.2372L15.7799 19.3252H11.8468Z" fill="#312ECB"/>
+                        </svg>
+                        <h1 class="font-normal text-gray-50 text-lg uppercase">Optimiser</h1>
+                    </div>
+
+                    <ul class="flex flex-col md:flex-row items-center gap-y-2 md:gap-x-6 mb-4 lg:mb-0">
+                        <li>
+                            <a href="#" class="font-medium text-gray-200 text-base hover:text-gray-400 transition duration-300">Our team</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="font-medium text-gray-200 text-base hover:text-gray-400 transition duration-300">Features</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="font-medium text-gray-200 text-base hover:text-gray-400 transition duration-300">Pricing</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="font-medium text-gray-200 text-base hover:text-gray-400 transition duration-300">Partners</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="font-medium text-gray-200 text-base hover:text-gray-400 transition duration-300">Help</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="font-medium text-gray-200 text-base hover:text-gray-400 transition duration-300">Privacy</a>
+                        </li>
+                    </ul>
+
+                    <p class="font-normal text-gray-500 text-base">&copy; 2021 Optimiser by <span class="text-gray-200">Elegant Goodies</span></p>
+                </div>
+            </div>
+            <!-- container.// -->
+        </footer>
+
+
+        <script>
+            // hamburber
+            const toggleButton = document.getElementById('toggleButton');
+            const naviList = document.getElementById('navi-list');
+            toggleButton.addEventListener('click', () => {
+                naviList.classList.toggle('active');
+            })
+        </script>
+    </body>
+</html>
